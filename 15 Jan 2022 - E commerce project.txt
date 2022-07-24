@@ -1,0 +1,453 @@
+E commerce project-
+
+it is online platform where we can buy the products.
+
+Requirement----- login and CRUD operation perform-
+sort the records based on the ascending and descending order.-----UI side-
+
+JIRA----tool-- project management tool in which scrum master will assign the 
+task to team members.
+
+task---- or issue both are same thing
+
+sprint 2 weeks -9 - 20 may---------
+
+story point------scrum master---
+task easy-2
+task medium 3
+task difficult- 5, 8-
+big task---------------13
+
+medium high and low-  user story priority-
+
+status-
+open
+in progress----when the user story will assign to perticular members, 
+close--- when work is done at that time , need to close the user story
+
+Reporter means manager or tl name
+
+every user story have multiple acceptance criteria.
+
+AC_01---what are the opertion or task you need to perform in details
+
+AC_02---description
+
+who will write the user story details on JIRA---- BA- Business Analyst-
+
+where you upload result of your US on JIRA- 
+
+Attachment section-  create one word document-
+Rest API request url-
+
+Response ---json format- we need to attached the screenshot of that-
+
+every user story have multiple sub-task-
+
+test case preparation and test case review- QA/ Tester- steps- 
+
+step-1 login to system
+step-2 enter the username and password then click on submit button
+step-3- home page will be displayed on screen-
+
+how to update regarding your task to manager or TL
+
+daily stand up meeting or
+send mail to manager at EOD------
+JIRA- update in percent 10%, 20%, 50% 90% 100%(testing done and working fine 
+as per business requirement)
+
+------------------------------------------
+if you have any query regarding your task then how you communicate with
+your team lead or manager ?
+
+JIRA-
+Activity section- comments-
+
+@Manager name- query ?
+
+@Ram- answer.
+
+@Manager name- questions ?
+
+@Ram- answer-
+
+or Microsoft team for communication- send the message on team
+
+
+-----------------------------------------------------
+project architecture
+
+where you write business logic in your project so answer is service layer-
+
+project architecture ? - flow
+
+user--->User interface--->API Layer(Rest Controller)---->Service Layer--->
+DAO Layer-------->Database(MYSQL)
+
+-------------------------------------------
+you have to explain basic architecture first then 
+
+if interviewer is not satisfied then explain in detail architecture
+with middleware services
+
+------------------------------------------------
+functional knowledge-
+
+user --- userid,name, address, city, phone number
+seller- seller details name, phone number, products
+admin- add the product from back end, offer and discounts-
+Account details- online shopping site a/c---id, date,amt,transfer
+transection- id, amt, date, etc
+delivery- product or item order-------delivery date, time-- status- in progress/done
+reports- 
+no of user-----
+product order report-
+product cancellation--
+refund amt for product report-
+-purchase the product
+
+bank details- own details - whre you want to transfer your amount
+trasfer module
+
+trasfer amt, id, date , to whom they transfer, trasfer- initate refund-
+
+process ---- received the amount
+
+Receipt processing- invoice is generated once product is ordered
+
+authrity limit-
+
+Admin--not accessible for us.
+Read
+Write
+
+login module--->username and passoword- login--
+
+do you have worked on payment gateway- ans- no, TL work
+
+Track Order-------25th-- mumbai----27th pune head office----out for delivery-
+
+Agent-- commission agent--
+
+Comparison- compare the multiple product- Laptop - HP vs Dell
+
+--------------------------------------------------------
+Spring Boot Configuration- how to create spring boot project-
+steps only-
+
+com.wipro.bankofamerica.estore.controller---- API layer
+
+com.wipro.bankofamerica.estore.service---------
+com.wipro.bankofamerica.estore.serviceImpl-----Service Layer
+
+com.wipro.bankofamerica.estore.repository------ dao layer
+
+MYSQL is database layer
+
+---------------------------------------------
+Product controller--- inject the service object by using @Autowired-
+
+
+--------------------------------
+how to run spring boot project-
+
+@GetMapping-  use get method
+
+How to starts for writing Rest API into Industry
+
+.Design the POJO class
+-Design the service and service implementation-  injecting the repo object with the help of @Autowired
+-Design repository layer
+-Design the RestController------ injecting the service with the help of @Autowired
+
+------different annotation used and explain them-
+
+it is used to inject the object- called as autowired-
+
+class ProductController
+{
+
+  @Autowired
+  private ProductService productService;
+
+}
+
+------------------------------------Debugging code-----------------------------
+issue or error- you have to fix that issue
+
+F5---- inside the method
+F6----- line by line checking
+F8-----jump to next debug point
+-------------------------------------------------------------------------------
+1. open the Rest controller class 
+2. go to api, where you apply the debug point. 
+3. open the postman
+
+---------------------------------------------------------------------------
+Factory design pattern-
+
+run time perticular object is return--
+
+camera- camera object
+laptop- laptop object
+
+1. create interface-
+2. concrete classes -3
+
+-----------------------------------------------------------------------
+how to push and pull the code
+
+how to push the data from local machine to git server/bit bucket
+
+git commit -m "login functionality changes"
+
+git commit -m "Added the one field on product desciption page- quantity"
+
+git push-------- changes will reflect on server that git /bitbucket-
+
+how to pull the data from git server
+
+git pull and press enter button----local machine
+
+how to create the branch---
+
+----------------------------------how you resolve conflicts -------------
+
+login.java--
+
+ram developer-----------------
+
+line no 40 ----changes------ commit------git
+
+ajay developer-------
+
+line no 40------other changes-------commit----error----   Revert--(Remove changes)
+-----------updated code checkout-----  add 
+
+current code-ajay-----take back up of file---
+
+----------------------------------different server--------------------------
+Local machine-------(me)---Laptop/desktop-
+work----test---on local machine-----it is working or not?
+
+Dev server--  TL is deploying the code on server---->
+TL will sent mail and provide the url in that mail---->
+whatever the functionality is done by you that needs to be check-
+who is checking here->developer
+
+Test- TL is deploying the code on server---->
+TL will sent mail and provide the url in that mail---->
+Tester will check the funtionality------>Bug or error- JIRA ticket raise-
+
+Assigned to- Ram------mail trigger----link---->check whether it is working or not
+
+UAT--- tester-- green signal---
+
+Production-------Live Server----end user(me)
+---------------------------------------------------------------------
+transection management-
+
+task perform
+
+user with product(details buy) ---------save ----data -----into db
+sometimes what will be happened here, user will store into db and
+product will not be stored into db due to run time error
+in this case?
+Does it make sense to store the user details ? No-
+
+step-1 open your class where the main method is available
+@EnableTransactionManagement- to active the transection management
+
+step-2
+use the @Transectinal annotation at service layer
+
+@Transectional
+public User saveUser(User user)
+
+@Transectional
+public Product SaveProduct(Product product)
+
+----------------------------------------------------------
+how to chage the port number in spring boot project
+open the application.properties file and write server.port=8083
+---------------------------------------------------------------
+How to configure the logger into Project-
+    logger is used to store the information about application
+
+if we deploy the application on production server then got issue or error
+then how you resolve that issue?
+
+answer is through Log file
+
+steps-1-- application.properties file
+logging.level.root=WARN
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate=ERROR
+logging.pattern.file= "%d{yyyy-MM-dd } [%thread] %-5level %logger{36} - %msg%n"
+logging.file.name=E:/Industrial Training/Jeevan_E-Commerce/application.log
+
+step-2- open rest controller
+private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
+step-3-
+
+logger.info("");
+
+------------------------------------------------------
+How to design custom exception in java
+
+1. create class
+2. extends RunTimeException
+3. Add parameterized constructor
+--------------------------------------------------
+
+How to write the Custom Query in live project
+
+----------------------------------------------------
+How to perform manual testing in project-- 
+whatever the API we have designed that API tested by using postman
+
+Release means
+
+whatever the functionality we have completed that need to delivered to client-
+
+2 month/3 month/4 month----- answer is 3 month-------
+
+---------------------------------------------------
+Deployment- we have not worked on deployment part-
+
+java- war file create
+angular - build
+
+-------------------------------------------------
+E store manual - details of project
+
+Dev guide or REST API document or developer guide
+
+what are the different document which is used by your company?
+
+---------------------------------------------------
+Daily status-
+
+Send mail to manager at EOD- Microsoft outlook  not gmail-
+
+To - ramesh@wipro.com
+
+subject- Daily status
+
+Hi Ramesh,
+   Please find the attached status-
+
+-Design the Restful API for user with multiple product list.
+-Added the quantity field for product description page
+-Added field quanitty into database
+
+Thanks & Regards,
+Ram Patil
++91 88880 85850
+------------------------------------------------------------------
+JIRA- update in percent 10%, 20%, 50% 90% 100%(testing done and working fine 
+as per business requirement)
+or 
+Daily stand up meeting-
+
+-------------------------------------------------------------------
+timesheet-
+
+URL------
+
+from 2 May to 6 May
+Monday Tuesday Wednesday Thrusday Friday
+8.0     8.0    8.0        8.0     8.0      = 40
+--------------------------------------------------------------------
+How to provide security to your spring boot application
+
+
+Live url----http://192.168.12.50:8083/product/save
+
+Live url -----http://www.eshop.com/
+------------------------------------------------------------------
+Live ?
+
+yes--
+
+Give me your url-
+
+answer - its confidential as per company policy, I cant share url with you.
+
+-------------------------------------------------------------------
+
+Note-High importance- Dont change roles and responsibilities in your resume
+
+keep it as 
+
+1.8 optional class-
+@FunctionalInterface
+
+lambda expression- create -
+extends-
+interface
+ArrayList----- List-
+HashMap example- create
+
+comparable and comparator interface-
+
+Product name- 
+----------------------------------------------------------------
+hibernate mapping--------live example which is related to e commerce only
+
+create some dummy examples for hibernate mapping
+-----------------------------------------------------------------
+
+How to flow the data from start to end in your project-
+
+AddProduct.html---->ts file---->service(angular)--API calling ----rest-api-ts--->
+
+
+Restcontroller----->service layer----dao layer-----Database-
+
+where you consume the api in your angular?-
+
+service(angular)--API calling------I have not worked on angular side.
+work as only back end developer.
+
+-------------------------------------------------------------
+How to run spring boot with angular
+
+step-1
+
+run the spring boot project
+
+step-2
+
+run the angular project-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
